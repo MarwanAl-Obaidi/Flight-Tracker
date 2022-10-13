@@ -1,6 +1,25 @@
 .App {
   text-align: center;
   color: #61dafb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: -2rem;
+  margin-left: -0.3rem;
+}
+
+h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* .Home{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} */
+
+a:link {
+  color: red;
+}
+
+a:visited {
+  color: green;
 }
 
 .Table {
@@ -38,6 +57,7 @@ body {
   color: #61dafb;
   margin: 400px auto;
   font-size: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @media only screen and (max-width: 375px) {
