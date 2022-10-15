@@ -1,46 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const [arrivals, setArrivals] = useState([]);
-  const [isReady, setReady] = useState(false);
-
-  useEffect(() => {
-    fetch('https://flight-tracker-api.onrender.com/api/helsinki/arrivals')
-    .then(response => response.json())
-    .then(resData => {
-      setReady(true);
-      setArrivals(resData.arrivals);
-    })
-  }, []);
-
-  if (!isReady)
-    return <div className="loading">Loading...</div>
-
   return (
     <div className="App">
-      <h1>Helsinki / Arrivals</h1>
-      <p>Powered by: <a href="https://flight-tracker-api.onrender.com/">flight-tracker-api</a></p>
-      <div>
-          {
-          arrivals.map((plane, index) => 
-          <table className="Table" key={index}>
-            <tr>
-              <th>Flight Number: {plane.flight_number}</th>
-            </tr>
-            <tr>
-              <td>From: {plane.from}</td>
-            </tr>
-            <tr>
-              <td>To: {plane.to}</td>
-            </tr>
-            <tr>
-              <td>Arrival: {plane.arrival}</td>
-            </tr>
-          </table>
-          )
-          }
-      </div>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
