@@ -13,7 +13,6 @@ const Home = () => (
   <div className='App'>
     <h1>Flight Tracker</h1>
     <p>Main Page</p>
-    <Link to="/hel">Helsinki</Link>
   </div>
 )
 
@@ -38,7 +37,6 @@ function Helsinki() {
     <div className="App">
       <h1>Helsinki / Arrivals</h1>
       <p>Powered by: <a href="https://flight-tracker-api.onrender.com/">flight-tracker-api</a></p>
-      <Link to="/">Back</Link>
       <div>
           {
           arrivals.map((plane, index) => 
