@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom/client'
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import loadingAnimation from './loadingAnimation.gif'
 
 import {
   BrowserRouter as Router,
@@ -24,15 +25,22 @@ function Helsinki() {
 
   useEffect(() => {
     fetch('https://flight-tracker-api.onrender.com/api/helsinki/arrivals')
-    .then(response => response.json())
-    .then(resData => {
-      setReady(true);
-      setArrivals(resData.arrivals);
-    })
+      .then(response => response.json())
+      .then(resData => {
+        setReady(true);
+        setArrivals(resData.arrivals);
+      })
   }, []);
 
   if (!isReady)
-    return <div className="loading">Loading...</div>
+    return <div className="loading">
+      <div>
+        Loading...
+      </div>
+      <div>
+        <img src={loadingAnimation} alt="Loading animation"></img>
+      </div>
+    </div>
 
   return (
     <div className="App">
@@ -40,24 +48,24 @@ function Helsinki() {
       <p>Powered by: <a href="https://flight-tracker-api.onrender.com/">flight-tracker-api</a></p>
       <Link to="/">Back</Link>
       <div>
-          {
-          arrivals.map((plane, index) => 
-          <table className="Table" key={index}>
-            <tr>
-              <th>Flight Number: {plane.flight_number}</th>
-            </tr>
-            <tr>
-              <td>From: {plane.from}</td>
-            </tr>
-            <tr>
-              <td>To: {plane.to}</td>
-            </tr>
-            <tr>
-              <td>Arrival: {plane.arrival}</td>
-            </tr>
-          </table>
+        {
+          arrivals.map((plane, index) =>
+            <table className="Table" key={index}>
+              <tr>
+                <th>Flight Number: {plane.flight_number}</th>
+              </tr>
+              <tr>
+                <td>From: {plane.from}</td>
+              </tr>
+              <tr>
+                <td>To: {plane.to}</td>
+              </tr>
+              <tr>
+                <td>Arrival: {plane.arrival}</td>
+              </tr>
+            </table>
           )
-          }
+        }
       </div>
     </div>
   );
