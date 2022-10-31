@@ -1,28 +1,13 @@
-<<<<<<< Updated upstream
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
-=======
 import ReactDOM from 'react-dom/client'
 import React, { useEffect, useState } from 'react';
 import './App.css';
+<<<<<<< HEAD
 import loadingAnimation from './loadingAnimation.gif';
 import { parseString as parseXmlToJs } from 'xml2js';
 import superagent from 'superagent';
+=======
+import loadingAnimation from './loadingAnimation.gif'
+>>>>>>> origin/master
 
 import {
   BrowserRouter as Router,
@@ -51,6 +36,7 @@ function Helsinki() {
         setReady(true);
         setArrivals(resData.arrivals);
       })
+<<<<<<< HEAD
       superagent.post("https://api.finavia.fi/flights/public/v0/flights/arr/HEL")
           .set('app_key', '333b3e7b0c89a629e6d94759afe5427f')
           .set('app_id','54b2ca53')
@@ -84,6 +70,10 @@ function Helsinki() {
   }, []);
     // const appId = 54b2ca53
     // const AppKey = 333b3e7b0c89a629e6d94759afe5427f
+=======
+  }, []);
+
+>>>>>>> origin/master
   if (!isReady)
     return <div className="loading">
       <div>
@@ -148,4 +138,3 @@ const App = () => {
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(<Router><App /></Router>)
->>>>>>> Stashed changes
