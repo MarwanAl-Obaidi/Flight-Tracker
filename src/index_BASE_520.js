@@ -1,9 +1,7 @@
 import ReactDOM from 'react-dom/client'
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import loadingAnimation from './loadingAnimation.gif';
-import { parseString as parseXmlToJs } from 'xml2js';
-import superagent from 'superagent';
+import loadingAnimation from './loadingAnimation.gif'
 
 import {
   BrowserRouter as Router,
@@ -32,39 +30,8 @@ function Helsinki() {
         setReady(true);
         setArrivals(resData.arrivals);
       })
-      superagent.post("https://api.finavia.fi/flights/public/v0/flights/arr/HEL")
-          .set('app_key', '333b3e7b0c89a629e6d94759afe5427f')
-          .set('app_id','54b2ca53')
-          .set('Accept', 'application/xml')
-          .set('Access-Control-Allow-Origin', 'localhost:3000')
-          .set('Access-Control-Allow-Methods', 'GET',)
-          .set('Access-Control-Allow-Headers', 'Accept, app_id, app_key')
-
-      
-      //fetch('https://api.finavia.fi/flights/public/v0/flights/arr/HEL?app_id=54b2ca53&app_key=333b3e7b0c89a629e6d94759afe5427f', {
-      //    headers: {
-      //        Accept: 'application/xml',
-      //        app_id: '54b2ca53',
-      //        app_key: '333b3e7b0c89a629e6d94759afe5427f',
-      //        'Access-Control-Allow-Origin': '*',
-      //        'Access-Control-Allow-Methods': 'GET',
-      //        'Access-Control-Allow-Headers': 'Accept, app_id, app_key'
-      //    },
-      //    method: 'GET',
-      //    mode: 'no-cors',
-      //    credentials: 'same-origin',
-      //    redirect: 'follow',
-      //    referrerPolicy: 'no-referrer'
-      //    })
-          .then(response => parseXmlToJs(response.body))
-          .then(resData => {
-              //setReady(true);
-              //setArrivals(resData.arrivals);
-              console.log(resData);
-          })
   }, []);
-    // const appId = 54b2ca53
-    // const AppKey = 333b3e7b0c89a629e6d94759afe5427f
+
   if (!isReady)
     return <div className="loading">
       <div>
