@@ -12,6 +12,17 @@ import {
   Link
 } from "react-router-dom"
 
+//var myHeaders = new Headers();
+//myHeaders.append("Accept", "application/xml");
+//myHeaders.append("app_id", "54b2ca53");
+//myHeaders.append("app_key", "333b3e7b0c89a629e6d94759afe5427f");
+
+//var requestOptions = {
+//    method: 'GET',
+//    headers: myHeaders,
+//    redirect: 'follow'
+//};
+
 const Home = () => (
   <div className='App'>
     <h1>Flight Tracker</h1>
@@ -32,30 +43,34 @@ function Helsinki() {
         setReady(true);
         setArrivals(resData.arrivals);
       })
-      superagent.post("https://api.finavia.fi/flights/public/v0/flights/arr/HEL")
-          .set('app_key', '333b3e7b0c89a629e6d94759afe5427f')
-          .set('app_id','54b2ca53')
-          .set('Accept', 'application/xml')
-          .set('Access-Control-Allow-Origin', 'localhost:3000')
-          .set('Access-Control-Allow-Methods', 'GET',)
-          .set('Access-Control-Allow-Headers', 'Accept, app_id, app_key')
+      //superagent.post("https://api.finavia.fi/flights/public/v0/flights/arr/HEL")
+      //    .set('app_key', '333b3e7b0c89a629e6d94759afe5427f')
+      //    .set('app_id','54b2ca53')
+      //    .set('Accept', 'application/xml')
+      //    .set('Access-Control-Allow-Origin', 'localhost:3000')
+      //    .set('Access-Control-Allow-Methods', 'GET',)
+      //    .set('Access-Control-Allow-Headers', '*')
 
+      //fetch("https://api.finavia.fi/flights/public/v0/flights/arr/HEL", requestOptions)
+      //    .then(response => response.text())
+      //    .then(result => console.log(result))
+      //    .catch(error => console.log('error', error));
       
-      //fetch('https://api.finavia.fi/flights/public/v0/flights/arr/HEL?app_id=54b2ca53&app_key=333b3e7b0c89a629e6d94759afe5427f', {
-      //    headers: {
-      //        Accept: 'application/xml',
-      //        app_id: '54b2ca53',
-      //        app_key: '333b3e7b0c89a629e6d94759afe5427f',
-      //        'Access-Control-Allow-Origin': '*',
-      //        'Access-Control-Allow-Methods': 'GET',
-      //        'Access-Control-Allow-Headers': 'Accept, app_id, app_key'
-      //    },
-      //    method: 'GET',
-      //    mode: 'no-cors',
-      //    credentials: 'same-origin',
-      //    redirect: 'follow',
-      //    referrerPolicy: 'no-referrer'
-      //    })
+      fetch('https://api.finavia.fi/flights/public/v0/flights/arr/HEL?app_id=54b2ca53&app_key=333b3e7b0c89a629e6d94759afe5427f', {
+          headers: {
+              Accept: 'application/xml',
+              app_id: '54b2ca53',
+              app_key: '333b3e7b0c89a629e6d94759afe5427f',
+              'Access-Control-Allow-Origin': '*',
+              'Access-Control-Allow-Methods': 'GET',
+              'Access-Control-Allow-Headers': '*'
+          },
+          method: 'GET',
+          mode: 'no-cors',
+          credentials: 'same-origin',
+          redirect: 'follow',
+          referrerPolicy: 'no-referrer'
+          })
           .then(response => parseXmlToJs(response.body))
           .then(resData => {
               //setReady(true);
