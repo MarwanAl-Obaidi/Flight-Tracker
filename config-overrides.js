@@ -4,16 +4,17 @@ module.exports = function override(config) {
 
   Object.assign(fallback, { 
     "timers": require.resolve("timers"),
-    "timers-browserify": require.resolve("timers-browserify")
+    "timers-browserify": require.resolve("timers-browserify"),
+    "buffer": require.resolve("buffer")
   });
 
-  config.resolve.fallback = fallback; 
-  config.plugins = (config.plugins || []).concat([ 
-    new webpack.ProvidePlugin({ 
-      process: 'process/browser', 
-      Buffer: ['buffer', 'Buffer'] 
-    })
-  ]);
+  // config.resolve.fallback = fallback; 
+  // config.plugins = (config.plugins || []).concat([ 
+  //   new webpack.ProvidePlugin({ 
+  //     process: 'process/browser', 
+  //     Buffer: ['buffer', 'Buffer'] 
+  //   })
+  // ]);
 
   return config;
 }
