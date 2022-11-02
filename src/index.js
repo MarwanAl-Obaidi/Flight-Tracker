@@ -8,7 +8,9 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
+  Link,
+  useNavigate,
+  useParams
 } from "react-router-dom"
 
 moment.tz.setDefault('Europe/Helsinki');
@@ -24,18 +26,34 @@ moment.tz.setDefault('Europe/Helsinki');
 //    redirect: 'follow'
 //};
 
-const Home = () => (
-  <div className='App'>
+const Home = () => {
+  const navigate = useNavigate();
+
+  const [iata, setIata] = useState('');
+
+  const onSubmit = e => {
+    e.preventDefault();
+
+    navigate(`/${iata}`)
+  }
+
+  return <div className='App'>
     <h1>Flight Tracker</h1>
     <p>Main Page</p>
-    <Link to="/hel">Helsinki</Link>
+    {/* <Link to="/hel">Helsinki</Link> */}
+    <form onSubmit={onSubmit}>
+      <label for="iata">IATA</label>
+      <input onChange={e => setIata(e.target.value)} value={iata} required placeholder='HEL' name="iata"/>
+      <button type="submit">GO</button>
+    </form>
   </div>
-)
+}
 
-
-function Helsinki() {
+function Airport() {
   const [arrivals, setArrivals] = useState([]);
   const [isLoading, setIsLoading] = useState(null);
+  
+  const { iata } = useParams();
 
   useEffect(() => {
     // fetch('https://flight-tracker-api.onrender.com/api/helsinki/arrivals')
@@ -46,7 +64,7 @@ function Helsinki() {
     //   })
     
     setIsLoading(true);
-    fetch('https://airlabs.co/api/v9/schedules?api_key=0f5d74b9-c3e0-4d23-b617-82492830fda8&arr_iata=HEL')
+    fetch(`https://airlabs.co/api/v9/schedules?api_key=0f5d74b9-c3e0-4d23-b617-82492830fda8&arr_iata=${iata}`)
       .then(response => response.json())
       .then(resData => {
         resData.response.sort((flightA, flightB) => moment(flightA.arr_time, 'YYYY-MM-DD HH:mm').format('x') - moment(flightB.arr_time, 'YYYY-MM-DD HH:mm').format('x'))
@@ -66,30 +84,30 @@ function Helsinki() {
       <p>Powered by: <a href="https://airlabs.co/" target="_blank">AirLabs API</a></p>
       <Link to="/">Back</Link>
       <div>
-        { isLoading || !arrivals?.length ? <div className="loading">
+        { isLoading ? <div className="loading">
           <div>
             Loading...
           </div>
           <div>
             <img src={loadingAnimation} alt="Loading animation"></img>
           </div>
-        </div> : arrivals.map((plane, i) => {
+        </div> : (!arrivals?.length ? <div>No arrivals found for IATA code: {iata}</div> : arrivals.map((plane, i) => {
           const arrTime = moment(plane.arr_time, 'YYYY-MM-DD HH:mm')
           return <table className="Table" key={`plane-${i}`}>
             <tbody>
               <tr>
-                <th colspan="2">Flight Number: {plane.flight_iata}</th>
+                <th colSpan="2">Flight Number: {plane.flight_iata}</th>
               </tr>
               <tr>
                 <td>From: {plane.dep_iata}</td>
                 <td>To: {plane.arr_iata}</td>
               </tr>
               <tr>
-                <td colspan="2">Arrival: {arrTime.format(`HH:mm${arrTime.isSame(moment(), 'day') ? '' : ' DD.MM.YYYY'}`)}</td>
+                <td colSpan="2">Arrival: {arrTime.format(`HH:mm${arrTime.isSame(moment(), 'day') ? '' : ' DD.MM.YYYY'}`)}</td>
               </tr>
             </tbody>
           </table>
-        })}
+        }))}
       </div>
     </div>
   );
@@ -109,7 +127,7 @@ const App = () => {
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/hel" element={<Helsinki />} />
+        <Route path="/:iata" element={<Airport />} />
       </Routes>
       <div>
         <br />
