@@ -124,15 +124,26 @@ const App = () => {
       <div>
         <Link style={padding} to="/">Home</Link>
         <Link style={padding} to="/hel">Helsinki</Link>
+        <Link style={padding} to="/about">About</Link>
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:iata" element={<Airport />} />
+        <Route path="/about" element={<About />} />
       </Routes>
       <div>
         <br />
         <em>Innovation Project - 2022</em>
       </div>
+    </div>
+  )
+}
+
+const About = () => {
+
+  return (
+    <div className='About'>
+      <h2>About us</h2>
     </div>
   )
 }
