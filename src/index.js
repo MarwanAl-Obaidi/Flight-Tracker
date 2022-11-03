@@ -79,7 +79,7 @@ function Airport() {
 
   return (
     <div className="App">
-      <h1>Helsinki / Arrivals</h1>
+      <h1>Arrivals for {iata}</h1>
       {/* <p>Powered by: <a href="https://flight-tracker-api.onrender.com/">flight-tracker-api</a></p> */}
       <p>Powered by: <a href="https://airlabs.co/" target="_blank">AirLabs API</a></p>
       <Link to="/">Back</Link>
