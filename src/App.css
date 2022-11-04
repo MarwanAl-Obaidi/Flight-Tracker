@@ -27,6 +27,7 @@ a:visited {
 }
 
 .Table {
+  
   color: darkblue;
   text-align: center;
   margin: 50px auto;
@@ -36,25 +37,28 @@ a:visited {
   width: 275px;
 }
 
-h1 {
-  font-size: 50px;
+h1 { /* This is for the page HEADER (Arrivals for {iata})*/
+  font-size: 60px;
+  color: cyan;
 }
 
-p {
-  font-size: 20px;
+p { /* This is for Powered by AirLabs API.*/
+  font-size: 10px;
+  color: cyan;
 }
 
-th {
-  /* border: 2px brown solid; */
+th {  /* This is for the header inside the tables  */
+  color: cyan;
   border-radius: 4px;
   font-size: 30px;
 }
 
-td {
-  font-size: 20px;
+td {  /*  This is for the rest of the text inside tables */
+  font-size: 30px;
+  color: darkblue;
 }
 
-body {
+body {  /* This is the whole page background */
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
