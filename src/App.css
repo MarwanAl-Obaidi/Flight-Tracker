@@ -27,11 +27,13 @@ a:visited {
 }
 
 .Table {
+  color: darkblue;
   text-align: center;
   margin: 50px auto;
-  border: 2px brown solid;
-  border-radius: 4px;
-  width: 375px;
+  border: 2px cornflowerblue;
+  background-color: cornflowerblue;
+  border-radius: 20px;
+  width: 275px;
 }
 
 h1 {
@@ -73,6 +75,7 @@ body {
 
 .About {
   font-size: 100px;
+  
 } 
 
 .loading {
