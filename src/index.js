@@ -138,16 +138,17 @@ const App = () => {
     <div className='navBar'>
       <div>
       <header>
-    <a href="index.html" class="logo">FLIGHT TRACKER</a>
+    <Link to="/" class="logo">FLIGHT TRACKER</Link>
     <ul class="navbar">
         <li>
-            <a href="/">HOME</a>
+            <Link to="/">HOME</Link>
+        </li>
+        
+        <li>
+            <Link to="/about">ABOUT</Link>
         </li>
         <li>
-            <a href="/about">ABOUT</a>
-        </li>
-        <li>
-            <a href="/hel">HELSINKI</a>
+            <Link to="/hel">HELSINKI</Link>
         </li>
     </ul>
 </header>
