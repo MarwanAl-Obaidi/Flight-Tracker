@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import loadingAnimation from './loadingAnimation.gif';
 import moment from 'moment-timezone';
-
+import aboutBG from './Pictures/aboutBG.jpg';
+import genti from './Pictures/genti.png';
 import {
   BrowserRouter as Router,
   Routes,
@@ -37,16 +38,28 @@ const Home = () => {
     navigate(`/${iata}`)
   }
 
-  return <div className='App'>
-    <h1>Flight Tracker</h1>
-    <p>Main Page</p>
+  return ( <div className='Home'>
+    <div className='homebackground'>
+    <body>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    
+    <p>Welcome to FlightTracker! Input the desired airport's IATA code to get started.</p>
+   
     {/* <Link to="/hel">Helsinki</Link> */}
     <form onSubmit={onSubmit}>
-      <label for="iata">IATA</label>
+      <label for="iata">IATA </label>
       <input onChange={e => setIata(e.target.value)} value={iata} required placeholder='HEL' name="iata"/>
-      <button type="submit">GO</button>
+      <br></br>
+      <br></br>
+      <button class="submit">GO</button>
     </form>
+    </body>
+    </div>
   </div>
+  )
 }
 
 function Airport() {
@@ -79,11 +92,13 @@ function Airport() {
 
   return (
     <div className="App">
-      <h1>Arrivals for {iata}</h1>
-      {/* <p>Powered by: <a href="https://flight-tracker-api.onrender.com/">flight-tracker-api</a></p> */}
+      <br />
+      <br />
+      <br />
+      
+      <h1>ARRIVALS FOR {iata}</h1>
       <p>Powered by: <a href="https://airlabs.co/" target="_blank">AirLabs API</a></p>
-      <Link to="/">Back</Link>
-      <div>
+      <div class = "muie">
         { isLoading ? <div className="loading">
           <div>
             Loading...
@@ -116,35 +131,111 @@ function Airport() {
 const App = () => {
 
   const padding = {
-    padding: 5
+    padding: 100,
   }
 
   return (
     <div className='navBar'>
       <div>
-        <Link style={padding} to="/">Home</Link>
-        <Link style={padding} to="/hel">Helsinki</Link>
-        <Link style={padding} to="/about">About</Link>
+      <header>
+    <a href="index.html" class="logo">FLIGHT TRACKER</a>
+    <ul class="navbar">
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        <li>
+            <a href="/hel">HELSINKI</a>
+        </li>
+    </ul>
+</header>
+      
       </div>
+      <body>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:iata" element={<Airport />} />
         <Route path="/about" element={<About />} />
       </Routes>
-      <div>
+      <div className='BottomText'>
         <br />
         <em>Innovation Project - 2022</em>
       </div>
+      </body>
     </div>
   )
 }
 
+
+
+
+
+
+
+
+
+
 const About = () => {
 
   return (
-    <div className='About'>
-      <h2>About us</h2>
+  
+  <div className='About'>
+    
+    <body>
+      
+      <div class="aboutContainer">
+        <h1> OUR TEAM </h1>
+        <div class="team">
+        <div class="member">
+            <div class="personIMG">
+                
+            </div>
+            <h3>Jonnie</h3>
+            <p class="position">Web Design</p>
+            <p2 class="description">ipsum bus.</p2>
+        </div>
+        <div class="member">
+            <div class="personIMG">
+              <img src= { genti } alt = "Skullemoji."></img>  
+            </div>
+            <h3>Genti</h3>
+            <p class="position">Web Design</p>
+            <p2 class="description">ipsum .</p2>
+        </div>
+        <div class="member">
+            <div class="personIMG">
+               
+            </div>
+            <h3>Marwan</h3>
+            <p class="position">Developer</p>
+            <p2 class="description">ipsum ibus.</p2>
+        </div>
+        <div class="member">
+            <div class="personIMG">
+                
+            </div>
+            <h3>Leila</h3>
+            <p class="position">Developer</p>
+            <p2 class="description">ipsum dolor sit amet, consectetur adipisicing elit. Ab cumque distinctio dolorum temporibus vel voluptatibus.</p2>
+        </div>
+        <div class="member">
+            <div class="personIMG">
+              <img src={ aboutBG } alt= "Uh oh." ></img>
+            </div>
+            <h3>Iza</h3>
+            <p class="position">Developer</p>
+            <p2 class="description">ipsum dolor sit amet, consectetur adipisicing elit. Ab cumque distinctio dolorum temporibus vel voluptatibus.</p2>
+        </div>
+      </div>
     </div>
+    <div class="aboutourapp">
+    <h1 class= "aboutourapptitle">ABOUT OUR APP</h1>
+    <p class="description">Flight Tracker is a web application intended for use by Taxi drivers by offering an opportunity for the user to plan their schedule according to incoming traffic to airports, aiming to reduce the needless waiting periods for their customers. This project was created by students at Metropolia UAS as our Innovation Project. </p>
+    </div>
+    </body>
+  </div>
   )
 }
 
