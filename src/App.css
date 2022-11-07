@@ -1,17 +1,45 @@
-.App {
+.Home  {
+  
+  background-attachment: fixed;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: flexible;
   text-align: center;
-  color: #61dafb;
+  color: cyan;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+
+body {
+  background-attachment: fixed;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: flexible;
 }
 
 .navBar {
+  
   text-align: center;
-  color: #61dafb;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+    
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: flexible;
 }
-
-h1 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* .Home{
@@ -19,15 +47,24 @@ h1 {
 } */
 
 a:link {
-  color: red;
+  color: yellow;
 }
 
 a:visited {
-  color: green;
+  color: purple;
 }
 
+.App .muie {
+  font-family: 'Abel', sans-serif; /*this is controlling what is inside team div tag*/
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
 .Table {
-  
+
   color: darkblue;
   text-align: center;
   margin: 50px auto;
@@ -37,14 +74,15 @@ a:visited {
   width: 275px;
 }
 
-h1 { /* This is for the page HEADER (Arrivals for {iata})*/
-  font-size: 60px;
-  color: cyan;
+.App h1 { /* This is for the page HEADER (Arrivals for {iata})*/
+  font-size: 50px;
+  color: white;
 }
 
-p { /* This is for Powered by AirLabs API.*/
-  font-size: 10px;
-  color: cyan;
+.App p { /* This is for Powered by AirLabs API.*/
+  font-size: 20px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 th {  /* This is for the header inside the tables  */
@@ -58,29 +96,7 @@ td {  /*  This is for the rest of the text inside tables */
   color: darkblue;
 }
 
-body {  /* This is the whole page background */
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	height: 100vh;
-}
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
-.About {
-  font-size: 100px;
-  
-} 
 
 .loading {
   text-align: center;
@@ -98,3 +114,297 @@ body {  /* This is the whole page background */
     font-size: 50px;
   } 
 }
+
+.submit {
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0.8rem 3.5rem;
+  background: slateblue;
+  text-decoration: none;
+  color: #ffffffbb;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.submit:hover {
+  background: rgb(43, 21, 185);
+}
+.submit_active {
+  background: #292929 !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+}
+
+
+
+
+
+.About { /*This is the css for about page*/
+  
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-width: 100%;
+  min-height: 1000px;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.aboutContainer {
+  padding: 10px 10px 10px 10px;
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.aboutContainer h1 {  /* This is the "Our team" text */
+  font-family: 'Abel', sans-serif;
+  font-size: 32px;
+  margin-bottom: 60px;
+  text-align: center;
+  color: darksalmon;
+  position: relative;
+  
+}
+.aboutContainer p2 {  /*this is the text inside the boxes*/
+
+  font-size: 16px;
+  text-align: left;
+}
+
+.team {
+  font-family: 'Abel', sans-serif; /*this is controlling what is inside team div tag*/
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+.team .member {  /* this is the actual boxes themsevles*/
+  background: peachpuff;
+  margin: 5px;
+  border-radius: 6%;
+  margin-bottom: 50px;
+  width: 300px;
+  padding: 20px;
+  line-height: 20px;
+  position: relative;
+}
+
+.team .member h3 {  /* this is our names*/
+  color: darksalmon;
+  font-size: 26px;
+  margin-top: 50px;
+  text-transform: uppercase;
+}
+
+.team .member p.position { /* this is our job in the project*/
+  color: black;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 12px 0;
+}
+
+.team .member .personIMG {
+
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+}
+
+.team .member .personIMG img {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border-radius: 50%;
+  
+  transform: translateX(-4.5%) translateY(-4.5%);
+  
+}
+
+.team .member p2.description {
+  color: black;
+  text-align: justify;
+}
+
+.aboutourapp .description {
+  padding-top: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+  color: black;
+  
+}
+
+.aboutourapp .aboutourapptitle {
+  color: darksalmon;
+  font-size: 20px;
+  font-family: 'Abel', sans-serif;
+}
+
+/*CSS for /about ends here*/*
+
+
+
+
+
+
+
+
+
+
+
+
+header .logo {
+  position: relative;
+  font-family: 'Abel', sans-serif;
+  font-size: 1.5em;
+  color: #eeeeee;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+header .navbar {
+  display: flex;
+  justify-content: left;
+  font-family: 'Abel', sans-serif;
+  flex-wrap: wrap;
+  margin: 10px 20px;
+}
+
+header .navbar li {
+  list-style: none;
+  margin: 0 10px;
+}
+
+header .navbar li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+header .navbar li a:hover {
+  color: darksalmon;
+}
+
+
+
+
+
+
+/*Login styles*/
+
+
+
+.img-plane {
+  display: block;
+  height: 10%;
+  width: 10%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.form-box {
+  width: 65%;
+  position: fixed;
+  display: inline-block;
+  background: #fff;
+  padding: 40px;
+  overflow: hidden;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  border: 3px solid;
+  border-radius: 25px;
+  opacity: 90%;
+  align-items: center;
+  justify-content: space-between;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  max-width: 500px;
+
+}
+
+.input-group {
+  top: 180px;
+  position: fixed;
+  text-align: center;
+  transition: .25s;
+}
+
+.input-field {
+  width: 100%;
+  position: relative;
+  padding: 10px 0;
+  margin: 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #999;
+  font-family: 'Abel', sans-serif;
+  font-size: 18px;
+  outline: none !important;
+}
+
+.login_btn {
+  font-family: 'Abel', sans-serif;
+  display: block;
+  outline: none;
+  margin: auto;
+  width: 40%;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.25em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation
+}
+
+.login_btn:hover {
+  opacity: .5;
+}
+
+.pw-checkbox {
+  margin: 30px 10px 30px 0;
+}
+
+span {
+  font-size: 14px;
+  font-family: 'Abel', sans-serif;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px 50px 15px;
+  z-index: 10;
+}
+
+
+
+
+
