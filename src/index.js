@@ -41,22 +41,22 @@ const Home = () => {
     navigate(`/${iata}`)
   }
 
-  return ( <div className='Home'>
+  return (<div className='Home'>
     <div className='homebackground'>
-    <body>
-    <div className="homeContainer">
-    <h1> WELCOME TO FLIGHT TRACKER! </h1>
-    <p>Input the desired airport's IATA code to get started.</p>
-    {/* <Link to="/hel">Helsinki</Link> */}
-    <form onSubmit={onSubmit}>
-      <label for="iata">IATA </label>
-      <input onChange={e => setIata(e.target.value)} value={iata} required placeholder='HEL' name="iata"/>
-      <br></br>
-      <br></br>
-      <button class="submit">GO</button>
-    </form>
-    </div>
-    </body>
+      <body>
+        <div className="homeContainer">
+          <h1> WELCOME TO FLIGHT TRACKER! </h1>
+          <p>Input the desired airport's IATA code to get started.</p>
+          {/* <Link to="/hel">Helsinki</Link> */}
+          <form onSubmit={onSubmit}>
+            <label for="iata">IATA </label>
+            <input onChange={e => setIata(e.target.value)} value={iata} required placeholder='HEL' name="iata" />
+            <br></br>
+            <br></br>
+            <button class="submit">GO</button>
+          </form>
+        </div>
+      </body>
     </div>
   </div>
   )
@@ -97,9 +97,9 @@ function Airport() {
       <br />
 
       <h1>ARRIVALS FOR {iata}</h1>
-      <p>Powered by: <a href="https://airlabs.co/" target="_blank">AirLabs API</a></p>
-      <div class = "muie">
-        { isLoading ? <div className="loading">
+      <p>Powered by: <a href="https://airlabs.co/">AirLabs API</a></p>
+      <div class="muie">
+        {isLoading ? <div className="loading">
           <div>
             Loading...
           </div>
@@ -130,82 +130,69 @@ function Airport() {
 
 const App = () => {
 
-  const padding = {
+  /* const padding = {
     padding: 100,
-  }
+  } */
 
   return (
     <div className='navBar'>
       <div>
-      <header>
-    <Link to="/" class="logo">FLIGHT TRACKER</Link>
-    <ul class="navbar">
-        <li>
-            <Link to="/">HOME</Link>
-        </li>
+        <header>
+          <Link to="/" class="logo">FLIGHT TRACKER</Link>
+          <ul class="navbar">
+            <li>
+              <Link to="/">HOME</Link>
+            </li>
 
-        <li>
-            <Link to="/about">ABOUT</Link>
-        </li>
-        <li>
-            <Link to="/hel">HELSINKI</Link>
-        </li>
-    </ul>
-</header>
+            <li>
+              <Link to="/about">ABOUT</Link>
+            </li>
+            <li>
+              <Link to="/hel">HELSINKI</Link>
+            </li>
+          </ul>
+        </header>
 
       </div>
       <body>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/:iata" element={<Airport />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-      <div className='BottomText'>
-        <br />
-        <em>Innovation Project - 2022</em>
-      </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/:iata" element={<Airport />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </body>
     </div>
   )
 }
 
-
-
-
-
-
-
-
-
-
 const About = () => {
 
-  return ( <div className='About'>
+  return (<div className='About'>
 
     <body>
       <div class="aboutContainer">
         <h1> OUR TEAM </h1>
         <div class="team">
-        <div class="member">
+          <div class="member">
             <div class="personIMG">
 
             </div>
             <h3>Jonnie</h3>
             <p class="position">Web Design</p>
             <p2 class="description">ipsum bus.</p2>
-        </div>
-        <div class="member">
+          </div>
+          <div class="member">
             <div class="personIMG">
-              <img src= { genti } alt = "Genti"></img>
+              <img src={genti} alt="Genti"></img>
             </div>
             <h3>Genti</h3>
             <p class="position">Web Design</p>
             <p2 class="description">ipsum .</p2>
-        </div>
-        <div class="member">
+          </div>
+          <div class="member">
             <div class="personIMG">
-              <img src={ marwan } alt="Marwan"></img>
+              <img src={marwan} alt="Marwan"></img>
             </div>
             <h3>Marwan</h3>
             <p class="position">Developer / Web Design</p>
@@ -214,44 +201,38 @@ const About = () => {
               <br />
               <a href="https://github.com/MarwanAl-Obaidi">GitHub</a>
             </p2>
-        </div>
-        <div class="member">
+          </div>
+          <div class="member">
             <div class="personIMG">
-              <img src={ leila } alt = "Leila"></img>
+              <img src={leila} alt="Leila"></img>
             </div>
             <h3>Leila</h3>
-                 <p2 class="description">
-                          <a>Embedded Developer and visual artist</a>
-                          <br />
-                          <a href="https://www.linkedin.com/in/leila-d-d/" target="_blank">LinkedIn</a>
-                          <br />
-                          <a href="https://github.com/artemisCeres" target="_blank">GitHub</a>
-                          <br />
-                          <a href="https://instagram.com/trilobitaheart" target="_blank">Instagram</a>
-                      </p2>
-        </div>
-        <div class="member">
+            <p class="position">Embedded Developer and visual artist</p>
+            <p2 class="description">
+              <a href="https://www.linkedin.com/in/leila-d-d/">LinkedIn</a>
+              <br />
+              <a href="https://github.com/artemisCeres">GitHub</a>
+              <br />
+              <a href="https://instagram.com/trilobitaheart">Instagram</a>
+            </p2>
+          </div>
+          <div class="member">
             <div class="personIMG">
-              <img src={ aboutBG } alt= "Iza" ></img>
+              <img src={aboutBG} alt="Iza" ></img>
             </div>
             <h3>Iza</h3>
             <p class="position">Developer</p>
             <p2 class="description">ipsum dolor sit amet, consectetur adipisicing elit. Ab cumque distinctio dolorum temporibus vel voluptatibus.</p2>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="aboutourapp">
-    <h1 class= "aboutourapptitle">ABOUT OUR APP</h1>
-    <p class="description">Flight Tracker is a web application intended for use by Taxi drivers by offering an opportunity for the user to plan their schedule according to incoming traffic to airports, aiming to reduce the needless waiting periods for their customers. This project was created by students at Metropolia UAS as our Innovation Project. </p>
-    </div>
+      <div class="aboutourapp">
+        <h1 class="aboutourapptitle">ABOUT OUR APP</h1>
+        <p class="description">Flight Tracker is a web application intended for use by Taxi drivers by offering an opportunity for the user to plan their schedule according to incoming traffic to airports, aiming to reduce the needless waiting periods for their customers. This project was created by students at Metropolia UAS as our Innovation Project. </p>
+      </div>
     </body>
   </div>
   )
 }
-
-
-
-
-
 
 ReactDOM.createRoot(document.getElementById('root')).render(<Router><App /></Router>)

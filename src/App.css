@@ -1,6 +1,6 @@
-.Home  {
+.Home {
 
-  background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.0)),url(./Pictures/homeBG.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.0)), url(./Pictures/homeBG.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -12,6 +12,7 @@
 
 
 }
+
 body {
   width: 100%;
   margin: 0px;
@@ -33,6 +34,7 @@ body {
   font-family: 'Abel', sans-serif;
   max-width: 500px;
 }
+
 .navBar {
 
   text-align: center;
@@ -41,13 +43,16 @@ body {
   animation: gradient 15s ease infinite;
   height: flexible;
 }
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -65,15 +70,16 @@ a:visited {
   color: purple;
 } */
 
-.App{
-  background-image: linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.0)),url(./Pictures/appBG.jpg);
+.App {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.0)), url(./Pictures/appBG.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
 
 .App .muie {
-  font-family: 'Abel', sans-serif; /*this is controlling what is inside team div tag*/
+  font-family: 'Abel', sans-serif;
+  /*this is controlling what is inside team div tag*/
   display: flex;
   text-align: center;
   justify-content: center;
@@ -93,24 +99,28 @@ a:visited {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-.App h1 { /* This is for the page HEADER (Arrivals for {iata})*/
+.App h1 {
+  /* This is for the page HEADER (Arrivals for {iata})*/
   font-size: 50px;
   color: white;
 }
 
-.App p { /* This is for Powered by AirLabs API.*/
+.App p {
+  /* This is for Powered by AirLabs API.*/
   font-size: 20px;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-th {  /* This is for the header inside the tables  */
+th {
+  /* This is for the header inside the tables  */
   color: cyan;
   border-radius: 4px;
   font-size: 30px;
 }
 
-td {  /*  This is for the rest of the text inside tables */
+td {
+  /*  This is for the rest of the text inside tables */
   font-size: 30px;
   color: darkblue;
 }
@@ -129,8 +139,13 @@ td {  /*  This is for the rest of the text inside tables */
   .Table {
     width: 100%;
   }
+
   .About {
     font-size: 50px;
+  }
+
+  .aboutourapp .description {
+    font-size: 20px;
   }
 }
 
@@ -154,9 +169,11 @@ td {  /*  This is for the rest of the text inside tables */
   -webkit-user-select: none;
   touch-action: manipulation
 }
+
 .submit:hover {
   opacity: .5;
 }
+
 .submit_active {
   background: #292929 !important;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
@@ -166,8 +183,9 @@ td {  /*  This is for the rest of the text inside tables */
 
 
 
-.About { /*This is the css for about page*/
-  background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.0)),url(./Pictures/aboutBG.jpg);
+.About {
+  /*This is the css for about page*/
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.0)), url(./Pictures/aboutBG.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -178,6 +196,7 @@ td {  /*  This is for the rest of the text inside tables */
   right: 0;
   bottom: 0;
 }
+
 .aboutContainer {
   padding: 60px 0px 10px 0px;
   position: relative;
@@ -185,7 +204,8 @@ td {  /*  This is for the rest of the text inside tables */
   min-height: 100%;
 }
 
-.aboutContainer h1 {  /* This is the "Our team" text */
+.aboutContainer h1 {
+  /* This is the "Our team" text */
   font-family: 'Abel', sans-serif;
   font-size: 32px;
   margin-bottom: 60px;
@@ -194,21 +214,26 @@ td {  /*  This is for the rest of the text inside tables */
   position: relative;
 
 }
-.aboutContainer p2 {  /*this is the text inside the boxes*/
+
+.aboutContainer p2 {
+  /*this is the text inside the boxes*/
 
   font-size: 16px;
   text-align: left;
 }
 
 .team {
-  font-family: 'Abel', sans-serif; /*this is controlling what is inside team div tag*/
+  font-family: 'Abel', sans-serif;
+  /*this is controlling what is inside team div tag*/
   display: flex;
   text-align: center;
   justify-content: center;
   flex-wrap: wrap;
 
 }
-.team .member {  /* this is the actual boxes themsevles*/
+
+.team .member {
+  /* this is the actual boxes themsevles*/
   background: peachpuff;
   margin: 5px;
   border-radius: 6%;
@@ -219,14 +244,16 @@ td {  /*  This is for the rest of the text inside tables */
   position: relative;
 }
 
-.team .member h3 {  /* this is our names*/
+.team .member h3 {
+  /* this is our names*/
   color: darksalmon;
   font-size: 26px;
   margin-top: 50px;
   text-transform: uppercase;
 }
 
-.team .member p.position { /* this is our job in the project*/
+.team .member p.position {
+  /* this is our job in the project*/
   color: black;
   font-size: 12px;
   text-transform: uppercase;
@@ -275,20 +302,8 @@ td {  /*  This is for the rest of the text inside tables */
   font-family: 'Abel', sans-serif;
 }
 
-/*CSS for /about ends here*/*
-
-
-
-
-
-
-
-
-
-
-
-
-header .logo {
+/*CSS for /about ends here*/
+* header .logo {
   position: relative;
   font-family: 'Abel', sans-serif;
   font-size: 1.5em;
@@ -338,6 +353,7 @@ header .navbar li a:hover {
   margin-right: auto;
 
 }
+
 .form-box {
   width: 65%;
   position: fixed;
@@ -422,8 +438,3 @@ header {
   align-items: center;
   z-index: 10;
 }
-
-
-
-
-
