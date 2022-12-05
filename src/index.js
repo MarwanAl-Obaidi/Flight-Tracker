@@ -6,6 +6,8 @@ import loadingAnimation from './loadingAnimation.gif';
 import moment from 'moment-timezone';
 import aboutBG from './Pictures/aboutBG.jpg';
 import genti from './Pictures/genti.png';
+import marwan from './Pictures/marwan.png';
+import leila from './Pictures/leila.jpg';
 import {
   BrowserRouter as Router,
   Routes,
@@ -195,7 +197,7 @@ const About = () => {
         </div>
         <div class="member">
             <div class="personIMG">
-              <img src= { genti } alt = "Skullemoji."></img>
+              <img src= { genti } alt = "Genti"></img>
             </div>
             <h3>Genti</h3>
             <p class="position">Web Design</p>
@@ -203,15 +205,15 @@ const About = () => {
         </div>
         <div class="member">
             <div class="personIMG">
-
+              <img src={ marwan } alt="Marwan" />
             </div>
             <h3>Marwan</h3>
-            <p class="position">Developer</p>
+            <p class="position">Developer / Web Design</p>
             <p2 class="description">ipsum ibus.</p2>
         </div>
         <div class="member">
             <div class="personIMG">
-
+              <img src={ leila } alt = "Leila"></img>
             </div>
             <h3>Leila</h3>
             <p class="position">Developer</p>
@@ -219,7 +221,7 @@ const About = () => {
         </div>
         <div class="member">
             <div class="personIMG">
-              <img src={ aboutBG } alt= "Uh oh." ></img>
+              <img src={ aboutBG } alt= "Iza" ></img>
             </div>
             <h3>Iza</h3>
             <p class="position">Developer</p>
