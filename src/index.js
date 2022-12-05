@@ -143,7 +143,6 @@ const App = () => {
             <li>
               <Link to="/">HOME</Link>
             </li>
-
             <li>
               <Link to="/about">ABOUT</Link>
             </li>
@@ -152,10 +151,8 @@ const App = () => {
             </li>
           </ul>
         </header>
-
       </div>
       <body>
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:iata" element={<Airport />} />

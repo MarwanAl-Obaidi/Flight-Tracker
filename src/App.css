@@ -1,5 +1,4 @@
 .Home {
-
   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.0)), url(./Pictures/homeBG.jpg);
   background-position: center;
   background-size: cover;
@@ -9,8 +8,6 @@
   position: fixed;
   right: 0;
   bottom: 0;
-
-
 }
 
 body {
@@ -36,7 +33,6 @@ body {
 }
 
 .navBar {
-
   text-align: center;
   font-family: 'Abel', sans-serif;
   background-size: 400% 400%;
@@ -179,10 +175,6 @@ td {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
 }
 
-
-
-
-
 .About {
   /*This is the css for about page*/
   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.0)), url(./Pictures/aboutBG.jpg);
@@ -212,7 +204,6 @@ td {
   text-align: center;
   color: darksalmon;
   position: relative;
-
 }
 
 .aboutContainer p2 {
@@ -229,7 +220,6 @@ td {
   text-align: center;
   justify-content: center;
   flex-wrap: wrap;
-
 }
 
 .team .member {
@@ -277,9 +267,7 @@ td {
   height: 100px;
   padding: 5px;
   border-radius: 50%;
-
   transform: translateX(-4.5%) translateY(-4.5%);
-
 }
 
 .team .member p2.description {
@@ -293,7 +281,6 @@ td {
   padding-right: 10%;
   text-align: center;
   color: white;
-
 }
 
 .aboutourapp .aboutourapptitle {
@@ -336,14 +323,7 @@ header .navbar li a:hover {
   color: darksalmon;
 }
 
-
-
-
-
-
 /*Login styles*/
-
-
 
 .img-plane {
   display: block;
