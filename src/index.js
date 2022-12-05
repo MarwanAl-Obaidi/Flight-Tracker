@@ -158,6 +158,10 @@ const App = () => {
           <Route path="/:iata" element={<Airport />} />
           <Route path="/about" element={<About />} />
         </Routes>
+        <div className='BottomText'>
+          <br />
+          <em>Innovation Project - 2022</em>
+        </div>
       </body>
     </div>
   )
