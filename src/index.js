@@ -1,3 +1,4 @@
+
 import ReactDOM from 'react-dom/client'
 import React, { useEffect, useState } from 'react';
 import './App.css';
@@ -41,13 +42,9 @@ const Home = () => {
   return ( <div className='Home'>
     <div className='homebackground'>
     <body>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    
-    <p>Welcome to FlightTracker! Input the desired airport's IATA code to get started.</p>
-   
+    <div className="homeContainer">
+    <h1> WELCOME TO FLIGHT TRACKER! </h1>
+    <p>Input the desired airport's IATA code to get started.</p>
     {/* <Link to="/hel">Helsinki</Link> */}
     <form onSubmit={onSubmit}>
       <label for="iata">IATA </label>
@@ -56,6 +53,7 @@ const Home = () => {
       <br></br>
       <button class="submit">GO</button>
     </form>
+    </div>
     </body>
     </div>
   </div>
@@ -65,7 +63,7 @@ const Home = () => {
 function Airport() {
   const [arrivals, setArrivals] = useState([]);
   const [isLoading, setIsLoading] = useState(null);
-  
+
   const { iata } = useParams();
 
   useEffect(() => {
@@ -75,7 +73,7 @@ function Airport() {
     //     setReady(true);
     //     setArrivals(resData.arrivals);
     //   })
-    
+
     setIsLoading(true);
     fetch(`https://airlabs.co/api/v9/schedules?api_key=0f5d74b9-c3e0-4d23-b617-82492830fda8&arr_iata=${iata}`)
       .then(response => response.json())
@@ -95,7 +93,7 @@ function Airport() {
       <br />
       <br />
       <br />
-      
+
       <h1>ARRIVALS FOR {iata}</h1>
       <p>Powered by: <a href="https://airlabs.co/" target="_blank">AirLabs API</a></p>
       <div class = "muie">
@@ -143,7 +141,7 @@ const App = () => {
         <li>
             <Link to="/">HOME</Link>
         </li>
-        
+
         <li>
             <Link to="/about">ABOUT</Link>
         </li>
@@ -152,9 +150,10 @@ const App = () => {
         </li>
     </ul>
 </header>
-      
+
       </div>
       <body>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:iata" element={<Airport />} />
@@ -180,18 +179,15 @@ const App = () => {
 
 const About = () => {
 
-  return (
-  
-  <div className='About'>
-    
+  return ( <div className='About'>
+
     <body>
-      
       <div class="aboutContainer">
         <h1> OUR TEAM </h1>
         <div class="team">
         <div class="member">
             <div class="personIMG">
-                
+
             </div>
             <h3>Jonnie</h3>
             <p class="position">Web Design</p>
@@ -199,7 +195,7 @@ const About = () => {
         </div>
         <div class="member">
             <div class="personIMG">
-              <img src= { genti } alt = "Skullemoji."></img>  
+              <img src= { genti } alt = "Skullemoji."></img>
             </div>
             <h3>Genti</h3>
             <p class="position">Web Design</p>
@@ -207,7 +203,7 @@ const About = () => {
         </div>
         <div class="member">
             <div class="personIMG">
-               
+
             </div>
             <h3>Marwan</h3>
             <p class="position">Developer</p>
@@ -215,7 +211,7 @@ const About = () => {
         </div>
         <div class="member">
             <div class="personIMG">
-                
+
             </div>
             <h3>Leila</h3>
             <p class="position">Developer</p>
