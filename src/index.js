@@ -205,11 +205,15 @@ const About = () => {
         </div>
         <div class="member">
             <div class="personIMG">
-              <img src={ marwan } alt="Marwan" />
+              <img src={ marwan } alt="Marwan"></img>
             </div>
             <h3>Marwan</h3>
             <p class="position">Developer / Web Design</p>
-            <p2 class="description">ipsum ibus.</p2>
+            <p2 class="description">
+              <a href="https://www.linkedin.com/in/marwan-al-obaidi/">LinkedIn</a>
+              <br />
+              <a href="https://github.com/MarwanAl-Obaidi">GitHub</a>
+            </p2>
         </div>
         <div class="member">
             <div class="personIMG">
