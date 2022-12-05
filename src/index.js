@@ -220,8 +220,15 @@ const About = () => {
               <img src={ leila } alt = "Leila"></img>
             </div>
             <h3>Leila</h3>
-            <p class="position">Developer</p>
-            <p2 class="description">ipsum dolor sit amet, consectetur adipisicing elit. Ab cumque distinctio dolorum temporibus vel voluptatibus.</p2>
+                 <p2 class="description">
+                          <a>Embedded Developer and visual artist</a>
+                          <br />
+                          <a href="https://www.linkedin.com/in/leila-d-d/" target="_blank">LinkedIn</a>
+                          <br />
+                          <a href="https://github.com/artemisCeres" target="_blank">GitHub</a>
+                          <br />
+                          <a href="https://instagram.com/trilobitaheart" target="_blank">Instagram</a>
+                      </p2>
         </div>
         <div class="member">
             <div class="personIMG">
