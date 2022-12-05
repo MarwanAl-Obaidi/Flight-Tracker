@@ -173,7 +173,7 @@ td {  /*  This is for the rest of the text inside tables */
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-width: 100%;
-  min-height: 1500px;
+  min-height: 100%;
   position: fixed;
   right: 0;
   bottom: 0;
